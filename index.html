@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Assignment-6</title>
+   <!-- bootstrap -->
+   <link rel="stylesheet" href="./assets/css/bootstrap-css/bootstrap.min.css">
+   <!-- fontawesome -->
+   <link rel="stylesheet" href="./assets/fonts/fontawesome/css/all.css">
+   <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+</head>
+
+<body>
+
+   <div class="container mt-2 ">
+      <!-- MY TITLE  -->
+      <header>
+         <div class="row bg-info text-uppercase text-center">
+            <div class="col-lg-12 col-sm-12">
+               <h1 class="p-2">Mobile Maya</h1>
+            </div>
+         </div>
+      </header>
+
+      <!-- ...........SEARCH FIELD...............  -->
+      <div class="input-group mb-3 mx-auto w-50 mt-2">
+         <input id="search-field" type="text" class="form-control" placeholder="Search your Phone"
+            aria-label="Recipient's username" aria-describedby="button-search">
+         <button onclick="searchButton()" class="btn btn-outline-secondary" type="button"
+            id="button-search">SEARCH</button>
+      </div>
+
+
+      <!-- START error handel message -->
+      <div id="error" class="alert alert-warning alert-dismissible fade show" role="alert">
+
+         <strong id="message"></strong>
+
+         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      <!--END error handel message -->
+
+      <!-- ..........SHOW ALL CONTENT................  -->
+
+      <div class="row gx-3 mt-3">
+
+
+         <!-- <div class="col-lg-3 col-sm-12  bg-light"> -->
+         <!-- all Phone show body  -->
+         <div class="all-phone w-100 border  p-4 ">
+            <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+
+               <div class="col">
+                  <div class="card">
+                     <img src="..." class="card-img-top" alt="...">
+                     <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                           additional content. This content is a little bit longer.</p>
+                        <button class="btn button-style w-50">Detail</button>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <!-- end all PHONE show body  -->
+
+         <!--------------SHOW SINGLE PHONE DETAILS ---------->
+
+         <div id="single-card" class="row bg-warning">
+            
+            <div class="col-lg-6 col-sm-12 mx-auto">
+              <div class="card">
+                <img  src="..." class="card-img-top img-thumbnail" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+                  <!-- all detail phone  -->
+                  <table class="table table-dark table-hover">
+                     <thead>
+                       <tr>
+                         <th scope="col">#</th>
+                         <th scope="col">First</th>
+                         <th scope="col">Last</th>
+                         <th scope="col">Handle</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <th scope="row">1</th>
+                         <td>Mark</td>
+                         <td>Otto</td>
+                         <td>@mdo</td>
+                       </tr>
+                       <tr>
+                         <th scope="row">2</th>
+                         <td>Jacob</td>
+                         <td>Thornton</td>
+                         <td>@fat</td>
+                       </tr>
+                       a
+                       
+                     </tbody>
+                   </table>
+
+                  <!-- .....................  -->
+                  <div class="d-grid gap-2 mx-auto">
+
+                     <button class="btn button-style" type="button">Back</button>
+                    
+                   </div>
+                 
+                </div>
+              </div>
+            </div>
+
+
+         </div>
+
+         <!-- end single food show body  -->
+
+
+      </div>
+
+      <!-- </div> -->
+
+   </div>
+
+
+
+
+   <!-- ALL JQUERY LINK -->
+   <script src="./assets/js/phone.js"></script>
+   <script src="./assets/js/jquery-3.6.0.min.js"></script>
+   <script src="./assets/js/popper.min.js"></script>
+   <script src="./assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
