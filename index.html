@@ -16,12 +16,12 @@
 
 <body>
 
-   <div class="container mt-2 ">
+   <div class="container">
       <!-- MY TITLE  -->
       <header>
          <div class="row bg-info text-uppercase text-center">
             <div class="col-lg-12 col-sm-12">
-               <h1 class="p-2">Mobile Maya</h1>
+               <h2 class="p-2">Mobile Maya</h2>
             </div>
          </div>
       </header>
@@ -40,7 +40,7 @@
 
          <strong id="message"></strong>
 
-         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
 
       <!--END error handel message -->
@@ -52,20 +52,22 @@
 
          <!-- <div class="col-lg-3 col-sm-12  bg-light"> -->
          <!-- all Phone show body  -->
-         <div class="all-phone w-100 border p-4 ">
+         <div class="all-phone w-100 roundbody shadow-lg p-2 ">
             <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
 
-               <!-- <div class="col">
-                  <div class="card">
-                     <img src="#" class="card-img-top" alt="sorry not a image">
-                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                           additional content. This content is a little bit longer.</p>
-                        <button class="btn button-style w-50">Detail</button>
+               <!-- <div class="card roundcard bodycard shadow">
+                  <img style="height:300px" src='${phone.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
+                  <div class="row col-lg-12">
+                  <div class="card-body ms-4">
+                     <h5 class="card-title text-center">${phone.phone_name}</h5>
+                     <p class="card-text text-center">${phone.brand}</p>
+                     <div class="text-center">
+                        <button onclick="phoneDetails('${phone.slug}')" class="btn button-style w-50 text-center">Detail</button>
                      </div>
                   </div>
+                  </div>
                </div> -->
+
 
             </div>
          </div>

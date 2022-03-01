@@ -25,7 +25,7 @@ h5{
 }
 p{
    font-family: Montserrat-Regular;
-   font-size: 1.2rem;
+   font-size: 1.1rem;
 }
 a{
    text-decoration: none;
@@ -41,9 +41,25 @@ a{
 
 /* button style end  */
 .all-phone{
-   background-color: rgba(234, 240, 243, 0.322);
+   background-color: rgba(251, 253, 253, 0.322);
 }
-
+.roundbody{
+   border-radius: 20px;
+   border: 2px solid #ff297f2f;
+}
+.roundcard{
+   border-radius: 20px;
+   border: 2px solid #ff297f8c;
+}
+.bodycard{ 
+   background-color: #76f7d71e;
+}
+.shadowall{
+   box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.shadowsingle{
+   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
 
 
 

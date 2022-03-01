@@ -53,14 +53,18 @@ const phoneDisplay = (phoneAll) => {
          div.classList.add('col');
          div.innerHTML =`
             
-            <div class="card">
-               <img src="${phone.image}" class="card-img-top" alt="sorry not a image">
-               <div class="card-body">
-                  <h5 class="card-title">${phone.phone_name}</h5>
-                  <p class="card-text">${phone.brand}</p>
-                  <button onclick="phoneDetails('${phone.slug}')" class="btn button-style w-50">Detail</button>
+         <div class="card roundcard bodycard shadow">
+            <img style="height:300px" src='${phone.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
+            <div class="row col-lg-12">
+            <div class="card-body ms-4">
+               <h5 class="card-title text-center">${phone.phone_name}</h5>
+               <p class="card-text text-center">${phone.brand}</p>
+               <div class="text-center">
+                  <button onclick="phoneDetails('${phone.slug}')" class="btn button-style w-50 text-center">Detail</button>
                </div>
             </div>
+            </div>
+         </div>
 
             
          `;
@@ -73,7 +77,7 @@ const phoneDisplay = (phoneAll) => {
 const phoneDetails = (brand) => {
    // console.log(brand)
    // https://openapi.programming-hero.com/api/phone/
-   main.textContent ='';
+   // main.textContent ='';
    const url = `https://openapi.programming-hero.com/api/phone/${brand}`;
    fetch(url)
       .then(Response => Response.json())
@@ -92,11 +96,11 @@ const singlePhoneDetails = (singlePhone) => {
    div.classList.add('mx-auto');
 
    div.innerHTML = `
-   <div class="card">
-   <img  src="${singlePhone.image}" class="card-img-top img-thumbnail h-50" alt="sorry not a image">
+   <div class="card p-3 roundcard shadowsingle">
+   <img style="height:350px; width:300px" src='${singlePhone.image}' class="card-img-top mx-auto" alt="sorry not a image">
    <div class="card-body">
-     <h5 class="card-title">Name: ${singlePhone.name}</h5>
-     <p class="card-text">ReleaseDate: ${singlePhone.releaseDate ? singlePhone.releaseDate:`${error('block','NO Release date found')}`}</p>
+     <h5 class="card-title text-center">Name: ${singlePhone.name}</h5>
+     <p class="card-text text-center">ReleaseDate: ${singlePhone.releaseDate ? singlePhone.releaseDate:`NO Release Date Found`}</p>
 
      <!-- all detail phone  -->
      <table class="table table-dark table-hover">
@@ -136,9 +140,7 @@ const singlePhoneDetails = (singlePhone) => {
 
      <!-- .....................  -->
      <div class="d-grid gap-2 mx-auto">
-        <!-- <a href="#"><button class="btn button-style w-50">Back</button></a> -->
-           <button class="btn button-style" type="button">Back</button>
-      
+        <a href="index.html" class="btn button-style" type="button">Back</a>
      </div>
     
    </div>
