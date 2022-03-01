@@ -87,6 +87,7 @@ const phoneDetails = (brand) => {
 const main2 = document.getElementById('single-phone');
 const singlePhoneDetails = (singlePhone) => {
    console.log(singlePhone);
+   console.log(singlePhone.mainFeatures.sensors);
    
    const main2 = document.getElementById('single-phone');
    main2.textContent = '';
@@ -97,12 +98,13 @@ const singlePhoneDetails = (singlePhone) => {
 
    div.innerHTML = `
    <div class="card p-3 roundcard shadowsingle">
-   <img style="height:350px; width:300px" src='${singlePhone.image}' class="card-img-top mx-auto" alt="sorry not a image">
+   <img style="height:350px; width:300px" src='${singlePhone.image}' class="card-img-top mx-auto w-50" alt="sorry not a image">
    <div class="card-body">
      <h5 class="card-title text-center">Name: ${singlePhone.name}</h5>
      <p class="card-text text-center">ReleaseDate: ${singlePhone.releaseDate ? singlePhone.releaseDate:`NO Release Date Found`}</p>
 
      <!-- all detail phone  -->
+     <div class="table-responsive">
      <table class="table table-dark table-hover">
         <thead>
           <tr>
@@ -132,12 +134,17 @@ const singlePhoneDetails = (singlePhone) => {
             <th scope="row">Storage</th>
             <td>${singlePhone.mainFeatures.storage}</td>
           </tr>
+          <tr>
+            <th scope="row">Sensors</th>
+            <td class="table-responsive-sm"">${singlePhone.mainFeatures.sensors}</td>
+            
+          </tr>
           
 
           
         </tbody>
       </table>
-
+      </div>
      <!-- .....................  -->
      <div class="d-grid gap-2 mx-auto">
         <a href="index.html" class="btn button-style" type="button">Back</a>
