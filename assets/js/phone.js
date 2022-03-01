@@ -59,21 +59,21 @@ const allPhoneShow = (phoneAllShow) => {
       main2.textContent ='';
       // const main = document.getElementById('search-result');
       
-      for(const phone of phoneAllShow){
+      for(const phoneAll of phoneAllShow){
             // console.log(phone);
             const div = document.createElement('div')
             div.classList.add('col');
             div.innerHTML =`
                
             <div class="card roundcard bodycard shadow">
-               <img style="height:300px" src='${phone.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
+               <img style="height:300px" src='${phoneAll.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
                <div class="row col-lg-12">
                <div class="card-body ms-4">
-                  <h5 class="card-title text-center">${phone.phone_name}</h5>
-                  <p class="card-text text-center">${phone.brand}</p>
+                  <h5 class="card-title text-center">${phoneAll.phone_name}</h5>
+                  <p class="card-text text-center">${phoneAll.brand}</p>
                   <div class="text-center">
    
-                     <button onclick="phoneDetails('${phone.slug}')" class="btn button-style w-50 text-center">Detail</button>
+                     <button onclick="phoneDetails('${phoneAll.slug}')" class="btn button-style w-50 text-center">Detail</button>
                      
    
                   </div>
