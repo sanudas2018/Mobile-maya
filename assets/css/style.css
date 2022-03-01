@@ -51,21 +51,21 @@ a{
    border-radius: 20px;
    border: 2px solid #ff297f2f;
 }
-.roundcard{
+.round-card{
    border-radius: 20px;
    border: 2px solid #ff297f8c;
 }
-.bodycard{ 
+.body-card{ 
    background-color: #76f7d71e;
 }
 .shadowall{
    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
-.shadowsingle{
+.shadow-single{
    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
 }
-.shadowsingle2{
+.shadow-single2{
    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 .letter-space{
