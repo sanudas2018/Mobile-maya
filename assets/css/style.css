@@ -43,6 +43,10 @@ a{
 .all-phone{
    background-color: rgba(251, 253, 253, 0.322);
 }
+.header{
+   background-color: #6047EC;
+   
+}
 .roundbody{
    border-radius: 20px;
    border: 2px solid #ff297f2f;
@@ -59,6 +63,14 @@ a{
 }
 .shadowsingle{
    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+.shadowsingle2{
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.letter-space{
+   letter-spacing: 6px;
+   word-spacing: 8px;
 }
 
 
