@@ -2,10 +2,10 @@
    src: url(../fonts/google-font/Poppins-Bold.ttf);
    font-family: Poppins-Bold;
 }
-@font-face {
+/* @font-face {
    src: url(../fonts/google-font/Montserrat-Regular.ttf);
    font-family: Montserrat-Regular;
-}
+} */
 
 
 h1{
