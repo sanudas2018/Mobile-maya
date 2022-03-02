@@ -39,9 +39,16 @@ a{
    
 }
 
+#search-field{
+   border: 2px solid #FF297D;
+   border-radius: 20px 0px 0px 20px;
+   
+}
+
 /* button style end  */
 .all-phone{
    background-color: rgba(251, 253, 253, 0.322);
+   /* margin-top: -100px; */
 }
 .header{
    background-color: #6047EC;
@@ -67,10 +74,16 @@ a{
 }
 .shadow-single2{
    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+   
 }
 .letter-space{
    letter-spacing: 4px;
    word-spacing: 8px;
+}
+
+/* table*/
+.font-size{
+   font-size: 12px;
 }
 
 

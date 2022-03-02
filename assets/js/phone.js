@@ -21,6 +21,8 @@ const main = document.getElementById('search-result');
 const main2 = document.getElementById('single-phone');
 const showAllDiv = document.getElementById('show-all-div');
 const spinnerMain = document.getElementById('spinner');
+document.getElementById('all-phone').style.display='none';
+
 
 //START show all phone 
 document.getElementById('show-all-div').style.display='none';
@@ -69,92 +71,110 @@ const searchButton = () => {
 
 // Fast 20 search-result display
 const phoneDisplay = (phoneAll) => {
-   // console.log(phoneAll)
-   allPhoneShow(phoneAll)
-   const only20Value = phoneAll.slice(0, 20);
+   
+   // get 20 up value 
+   // allPhoneShow(phoneAll);
+
+
+   // slice 20 vlaue 
+   const only20Value = phoneAll.slice(0, 3);
    // console.log(only20Value);
 
    if(only20Value.length == 0){
       error('block','Sorry, NO PHONE FOUND');
       showAllDiv.textContent = '';
       spinnerMain.textContent ='';
-   }
-   main2.textContent ='';
-   const main = document.getElementById('search-result');
-   
-   for(const phone of only20Value){
-         // console.log(phone);
-         const div = document.createElement('div')
-         div.classList.add('col');
-         div.innerHTML =`
-            
-         <div class="card round-card body-card shadow">
-            <img style="height:300px" src='${phone.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
-            <div class="row col-lg-12">
-            <div class="card-body ms-4">
-               <h5 class="card-title text-center">${phone.phone_name}</h5>
-               <p class="card-text text-center">${phone.brand}</p>
-
-               <div class="text-center">
-                  <button onclick="phoneDetails('${phone.slug}')" class="btn button-style w-50 text-center">Detail</button>                 
-               </div>
-
-            </div>
-            </div>
-         </div>
-  
-         `;
-         main.appendChild(div);
-         allPhoneShowButton('block');
-         spinner('none');
-
-   }
-};
-//END Fast 20 search-result display 
-
-// START ALL PHONE SHOW search-result display 
-const allPhoneShow = (phoneAllShow) => {
-   const button = document.getElementById('show-all');
-
-   button.addEventListener('click', () => {
-      const main = document.getElementById('search-result');
-      main.textContent = '';
+      main2.textContent = '';
+   }else{
+      
       main2.textContent ='';
-
-      for(const phoneAll of phoneAllShow){
+      document.getElementById('all-phone').style.display='block';
+      const main = document.getElementById('search-result');
+      
+      for(const phone of only20Value){
             // console.log(phone);
             const div = document.createElement('div')
             div.classList.add('col');
             div.innerHTML =`
                
             <div class="card round-card body-card shadow">
-               <img style="height:300px" src='${phoneAll.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
+               <img style="height:300px" src='${phone.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
                <div class="row col-lg-12">
                <div class="card-body ms-4">
-                  <h5 class="card-title text-center">${phoneAll.phone_name}</h5>
-                  <p class="card-text text-center">${phoneAll.brand}</p>
+                  <h5 class="card-title text-center mb-0">${phone.phone_name}</h5>
+                  <p  class="card-text text-center mb-1">${phone.brand}</p>
+
                   <div class="text-center">
-   
-                     <button onclick="phoneDetails('${phoneAll.slug}')" class="btn button-style w-50 text-center">Detail</button>
-                     
-   
+                     <button onclick="phoneDetails('${phone.slug}')" class="btn button-style w-50 text-center" >Detail</button>                 
                   </div>
+
                </div>
                </div>
             </div>
    
-            
-               
             `;
             main.appendChild(div);
             allPhoneShowButton('block');
-            
-            
-   
+            spinner('none');
+
       }
-   })
+   }
    
 };
+//END Fast 20 search-result display 
+
+// START 20 UP PHONE SHOW search-result display 
+/* const allPhoneShow = (phoneAllShow) => {
+   
+   console.log(phoneAllShow)
+   
+   if(phoneAllShow?.length == 0){
+      console.log('valu pachi na')
+   }else{
+      // console.log(phoneAllShow)
+      const button = document.getElementById('show-all');
+      button.addEventListener('click', () => {
+         const main = document.getElementById('search-result');
+         main.textContent = '';
+         main2.textContent ='';
+         console.log(phoneAllShow);
+         for(const phoneAll of phoneAllShow){
+               // console.log(phone);
+               const div = document.createElement('div')
+               div.classList.add('col');
+               div.innerHTML =`
+                  
+               <div class="card round-card body-card shadow">
+                  <img style="height:300px" src='${phoneAll.image}' class="card-img-top w-50 mx-auto pt-3" alt="sorry not a image">
+                  <div class="row col-lg-12">
+                  <div class="card-body ms-4">
+                     <h5 class="card-title text-center">${phoneAll.phone_name}</h5>
+                     <p class="card-text text-center">${phoneAll.brand}</p>
+                     <div class="text-center">
+      
+                        <button onclick="phoneDetails('${phoneAll.slug}')" class="btn button-style w-50 text-center" >Detail</button>
+                        
+      
+                     </div>
+                  </div>
+                  </div>
+               </div>
+      
+               
+                  
+               `;
+               main.appendChild(div);
+               allPhoneShowButton('none');
+               
+               
+      
+         }
+      })
+   }
+      
+
+   
+}; */
 // END ALL PHONE SHOW search-result display 
 
 
@@ -165,12 +185,15 @@ const phoneDetails = (brand) => {
    fetch(url)
       .then(Response => Response.json())
       .then(data => singlePhoneDetails(data.data))
+      
    
 };
 
 const singlePhoneDetails = (singlePhone) => {
+   
    console.log(singlePhone);
    console.log(singlePhone.others);
+   // console.log(singlePhone.others);
   
    
    const main2 = document.getElementById('single-phone');
@@ -182,13 +205,16 @@ const singlePhoneDetails = (singlePhone) => {
    
    div.innerHTML = `
    
+   
+ 
    <div class="col-lg-4">
+   
       <div class="card p-2 round-card shadow-single w-100 h-100">
          <img src='${singlePhone.image}'
-            class="card-img-top mx-auto w-100 h-75" alt="sorry not a image">
+            class="card-img-top mx-auto w-100 h-100" alt="sorry not a image">
          <div class="card-body">
-            <h5 class="card-title text-center">Name: ${singlePhone.name}</h5>
-            <p class="card-text text-center">ReleaseDate: ${singlePhone.releaseDate ?
+            <h5 class="card-title text-center mt-2">Name: ${singlePhone.name}</h5>
+            <p class="card-text text-center p-1"><strong>ReleaseDate: </strong>${singlePhone.releaseDate ?
                singlePhone.releaseDate:`NO Release Date Found`}</p>
          </div>
       </div>
@@ -206,7 +232,7 @@ const singlePhoneDetails = (singlePhone) => {
 
                </tr>
             </thead>
-            <tbody>
+            <tbody class="font-size">
                <tr>
                   <th scope="row">Brand</th>
                   <td>${singlePhone.brand}</td>
@@ -233,16 +259,41 @@ const singlePhoneDetails = (singlePhone) => {
                </tr>
                <tr>
                   <th scope="row">Others</th>
-
-                  <td style="word-spacing: 5px;">${singlePhone?.others?.WLAN ?
-                     singlePhone.others.WLAN: 'NO VALUE FOUND'}, ${singlePhone?.others?.Bluetooth ?
-                     singlePhone.others.Bluetooth: 'NO VALUE FOUND'}, ${singlePhone?.others?.GPS ?
-                     singlePhone.others.GPS: 'NO VALUE FOUND'}, ${singlePhone?.others?.NFC ?
-                     singlePhone.others.NFC: 'NO VALUE FOUND'}, ${singlePhone?.others?.Radio ?
-                     singlePhone.others.Radio: 'NO VALUE FOUND'}, ${singlePhone?.others?.USB ?
-                     singlePhone.others.USB: 'NO VALUE FOUND'}</td>
-
-
+                  <td colspan="2">
+                     <table class="table table-dark table-hover">
+                        <tr>
+                           <th scope="row">WLAN</th>
+                           <td>${singlePhone?.others?.WLAN ?
+                              singlePhone.others.WLAN: 'NO VALUE FOUND'}</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Bluetooth</th>
+                           <td>${singlePhone?.others?.Bluetooth ?
+                              singlePhone.others.Bluetooth: 'NO VALUE FOUND'}</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">GPS</th>
+                           <td>${singlePhone?.others?.GPS ?
+                              singlePhone.others.GPS: 'NO VALUE FOUND'}</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">NFC</th>
+                           <td>${singlePhone?.others?.NFC ?
+                              singlePhone.others.NFC: 'NO VALUE FOUND'}</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Radio</th>
+                           <td>${singlePhone?.others?.Radio ?
+                              singlePhone.others.Radio: 'NO VALUE FOUND'}</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">USB</th>
+                           <td>${singlePhone?.others?.USB ?
+                              singlePhone.others.USB: 'NO VALUE FOUND'}</td>
+                        </tr>
+                     </table>
+                  
+                  </td>
 
 
                </tr>
@@ -254,6 +305,8 @@ const singlePhoneDetails = (singlePhone) => {
       </div>
       </div>
    </div>
+  
+ 
       `;
 
    main2.appendChild(div);
