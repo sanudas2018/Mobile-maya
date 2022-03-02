@@ -37,8 +37,7 @@ const searchButton = () => {
    const input = document.getElementById('search-field');
    const inputValue = input.value;
    const inputValueLower = inputValue .toLowerCase();
-   
-   console.log(inputValueLower)
+
    if(inputValueLower === ''){
       
       error('block','Please do not leave the field blank');
@@ -75,9 +74,8 @@ const phoneDisplay = (phoneAll) => {
    // get 20 up value 
    // allPhoneShow(phoneAll);
 
-
    // slice 20 vlaue 
-   const only20Value = phoneAll.slice(0, 3);
+   const only20Value = phoneAll.slice(0, 20);
    // console.log(only20Value);
 
    if(only20Value.length == 0){
@@ -191,21 +189,13 @@ const phoneDetails = (brand) => {
 
 const singlePhoneDetails = (singlePhone) => {
    
-   console.log(singlePhone);
-   console.log(singlePhone.others);
-   // console.log(singlePhone.others);
-  
-   
    const main2 = document.getElementById('single-phone');
    main2.textContent = '';
    
    const div = document.createElement('div');
    div.classList.add('row');
-
    
    div.innerHTML = `
-   
-   
  
    <div class="col-lg-4">
    
@@ -302,7 +292,7 @@ const singlePhoneDetails = (singlePhone) => {
 
             </tbody>
          </table>
-      </div>
+         </div>
       </div>
    </div>
   

@@ -2,96 +2,100 @@
    src: url(../fonts/google-font/Poppins-Bold.ttf);
    font-family: Poppins-Bold;
 }
+
 /* @font-face {
    src: url(../fonts/google-font/Montserrat-Regular.ttf);
    font-family: Montserrat-Regular;
 } */
 
 
-h1{
+h1 {
    font-family: Poppins-Bold;
 
 }
-.package-para-color{
+
+.package-para-color {
    color: #848199;
 }
+
 h2,
 h3,
 h4,
-h5{
+h5 {
    font-family: Poppins-Bold;
    color: #231D4F;
    /* font-size: 2.5rem; */
 }
-p{
+
+p {
    font-family: Montserrat-Regular;
    font-size: 1.1rem;
 }
-a{
+
+a {
    text-decoration: none;
 }
+
 /* button style start  */
-.button-style{
+.button-style {
    background-color: #FF297D;
    border-color: #FF297D;
    color: white;
    font-weight: bold;
-   
+
 }
 
-#search-field{
+#search-field {
    border: 2px solid #FF297D;
    border-radius: 20px 0px 0px 20px;
-   
+
 }
 
 /* button style end  */
-.all-phone{
+.all-phone {
    background-color: rgba(251, 253, 253, 0.322);
    /* margin-top: -100px; */
 }
-.header{
+
+.header {
    background-color: #6047EC;
-   
+
 }
-.roundbody{
+
+.roundbody {
    border-radius: 20px;
    border: 2px solid #ff297f2f;
 }
-.round-card{
+
+.round-card {
    border-radius: 20px;
    border: 2px solid #ff297f8c;
 }
-.body-card{ 
+
+.body-card {
    background-color: #76f7d71e;
 }
-.shadowall{
+
+.shadowall {
    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
-.shadow-single{
+
+.shadow-single {
    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
 }
-.shadow-single2{
+
+.shadow-single2 {
    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-   
+
 }
-.letter-space{
+
+.letter-space {
    letter-spacing: 4px;
    word-spacing: 8px;
 }
 
 /* table*/
-.font-size{
+.font-size {
    font-size: 12px;
 }
-
-
-
-
-
-
-
-
-
-
